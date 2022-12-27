@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: student-management-service
+  labels:
+    app: student-management-service
+spec:
+  replicas: 2
+  containers:
+    - name: student-management-service
+      image: student-management-service:latest
+      ports:
+        - containerPort: 8080

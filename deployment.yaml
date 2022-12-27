@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-management-service
+  labels:
+    app: student-management-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-management-service
+  template:
+    metadata:
+      labels:
+        app: student-management-service
+    spec:
+      containers:
+      - name: student-management-service
+        image: student-management-service:latest
+        ports:
+        - containerPort: 8080
